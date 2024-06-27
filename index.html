@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Producent</title>        
+    <link rel="icon" href="img/producent-logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body id="main-body">
+
+    <!-- Main container for slider -->
+    <div class="container">
+
+        <div class="arrow l" onclick="prev()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div class="slide slide-1">
+            <div id="wrapper" class="w1">
+                
+                <div class="grid-item profile-card">
+                    <img src="./img/square.jpg" alt="profile-pic" class="profile-pic">
+            
+                    <div class="profile-info">
+                        <h2 class="user-name">Sameer Bagul</h2>
+                        <h3 class="sample_user_id">@sample_user_id</h3>
+
+                        <!-- <p class="time-spend"><span>0</span>hr</p> -->
+                    </div>
+        
+                    <div class="useroptions">
+                        <div class="settings profile-option"><i class="fa-solid fa-user"></i></div>
+                        <div class="share profile-option"><i class="fa-solid fa-share-nodes"></i></div>
+                        <div class="account profile-option"><i class="fa-solid fa-gear"></i></div>
+                        <div class="home profile-option"><i class="fa-solid fa-house"></i></div>
+                        
+                        <div class="bg profile-option" id="bg-change-button">
+                            <i class="fa-solid fa-image" id="bg-change-icon"></i>
+                        </div>
+                        <input type="file" id="bg-input" accept="image/*" style="display: none;">
+                        
+                        <div class="bg profile-option">
+                            <i class="fa-solid fa-moon" id="theme-toggle"></i>
+                        </div>
+
+                        <div class="home profile-option"><i class="fa-solid fa-battery-full"></i></div>
+                        
+                        
+                    </div>    
+                </div>
+
+                <div class="grid-item system-details">
+
+                </div>
+
+                <div class="grid-item AI-box">
+                    
+                </div>
+
+                <div class="grid-item todo-list">
+                    
+                </div>
+
+                <div class="grid-item searchbar">
+                    
+                    <i class="fab fa-google search-option" data-url="google.com"></i>
+                    <i class="fab fa-youtube search-option" data-url="youtube.com"></i>
+                    <i class="fas fa-file-arrow-down download search-option"></i>
+                    <i class="fab fa-edge search-option" data-url="microsoftedge.com"></i>
+                    
+                </div>
+
+                <div class="grid-item searchBar-input">
+                    <input type="text" placeholder="Search..." class="input-bar" id="searchbar-input">
+                    <i class="fas fa-search" id="search-icon"></i>
+                </div>
+
+                <div class="grid-item side-appbar">
+            <div class="app-shortcut">
+                <a href="https://www.google.com" target="_blank">
+                    <img src="./img/google.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="./img/facebook.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.twitter.com" target="_blank">
+                    <img src="./img/tw.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="./img/instagram.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="./img/linkedin (1).png" alt="" class="img-logo">
+                </a>
+            </div>
+            
+            <div class="app-shortcut">
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="./img/youtube.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.fiverr.com" target="_blank">
+                    <img src="./img/fiverr.png" alt="" class="img-logo"> 
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.github.com" target="_blank">
+                    <img src="./img/github.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.spotify.com" target="_blank">
+                    <img src="./img/spotify.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.amazon.com" target="_blank">
+                    <img src="./img/amazon.png " alt="" class="img-logo">
+                </a>
+            </div>
+           
+          
+            
+            <div class="app-shortcut">
+                <a href="https://www.pinterest.com" target="_blank">
+                    <img src="./img/pinterest.png" alt="" class="img-logo">
+                </a>
+            </div>
+            
+            
+            
+            <div class="app-shortcut">
+                <a href="https://www.whatsapp.com" target="_blank">
+                    <img src="./img/whatsapp.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.telegram.org" target="_blank">
+                    <img src="./img/telegram.png" alt="" class="img-logo">
+                </a>
+            </div>
+            <div class="app-shortcut">
+                <a href="https://www.snapchat.com" target="_blank">
+                    <img src="./img/snap.png" alt="" class="img-logo">
+                </a>
+            </div>        
+            <div class="app-shortcut">
+                <a href="https://www.medium.com" target="_blank">
+                    <img src="./img/medium.png" alt="" class="img-logo">
+                </a>
+            </div>
+            
+            <div class="app-shortcut">
+                <a href="https://www.dribbble.com" target="_blank">
+                    <img src="./img/dribbble.png" alt="" class="img-logo">
+                </a>
+            </div>
+        </div>
+
+                <div class="grid-item CLK">
+                    
+                </div>
+
+                <div class="grid-item calendar-item">
+
+                    <div class="calendar-header">
+                        <div class="calendar-nav">
+                            <i class="fa-solid fa-chevron-left" onclick="prevMonth()"></i>
+                            <h3 id="current-month"></h3>
+                            <h3 id="current-year"></h4>
+                            <i class="fa-solid fa-chevron-right" onclick="nextMonth()"></i>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="calendar-body">
+                        <div class="weekdays">
+                            <div class="weekday sunday">Sun</div>
+                            <div class="weekday">Mon</div>
+                            <div class="weekday">Tue</div>
+                            <div class="weekday">Wed</div>
+                            <div class="weekday">Thu</div>
+                            <div class="weekday">Fri</div>
+                            <div class="weekday">Sat</div>
+                        </div>
+                        <div class="days" id="calendar-days">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item github">
+                    
+                </div>
+
+                <div class="grid-item music">
+                    
+                </div>
+
+                <div class="grid-item notebook">
+                    
+                        <div class="shortcut" ">
+                            <a href="notebook1.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 1</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook2.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 2</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook3.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 3</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook4.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 4</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook5.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 5</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook6.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 6</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook7.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 7</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook8.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 8</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook9.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook10.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p>
+                            </a>
+                        </div>
+
+                        <div class="shortcut" ">
+                            <a href="notebook9.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p>
+                            </a>
+                        </div>
+                
+                        <div class="shortcut" ">
+                            <a href="notebook10.html">
+                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p>
+                            </a>
+                        </div>
+
+                        
+                    
+                </div>
+                
+                
+                
+                
+                <div class="grid-item geeta-shlok-box">
+                    
+                        <h3 class="sholka">
+                            यदा यदा हि धर्मस्य ग्लानिर्भवति भारत | <br> 
+                            अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ||
+                        </h3>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="slide slide-2">
+            <div id="wrapper" class="w2">
+                
+            </div>
+        </div>
+        
+        <div class="arrow r" onclick="next()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+    <!-- Main container for slider End -->
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

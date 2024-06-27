@@ -1,0 +1,460 @@
+:root {
+    --background-color: #2b2b2b;    
+    --text-color: #ffffff;
+    --link-color: #ff00b7;
+    --main-color: #ff4500;
+    --icon-color: #000000;
+
+    --blur-10: blur(10px);
+    --border-radius-20: 20px;
+    --grid-item-glass-bg: rgba(17, 25, 40, 0.25);
+    --glass-border-color: rgba(255, 255, 255, 0.125);
+    --glass-border: 1px solid var(--glass-border-color);
+}
+
+/* Light theme overrides */
+.light-theme {
+    --background-color: #f0f0f0;
+    --text-color: #000000;
+    --link-color: #ff00b7;
+    --main-color: #ff4500;
+    --icon-color: #ffffff;
+
+    --grid-item-glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border-color: rgba(209, 213, 219, 0.3);
+    --glass-border: 1px solid var(--glass-border-color);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+
+/* General Styling */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    color: var(--text-color);
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.slide {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 50%;
+    transition: background 500ms;
+}
+
+.arrow i {
+    color: white;
+    font-size: 25px;
+}
+
+.l {
+    left: 0;
+}
+
+.r {
+    right: 0;
+}
+
+/* General Grid Styling */
+#wrapper {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    width: 100%;
+    height: 100vh;
+    gap: 10px;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+#main-body {
+    background-image: url('../assets/5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.w1 {
+    /* background-image: url('../assets/5.jpg'); */
+}
+
+.w2 {
+    /* background-image: url('../assets/8.jpg'); */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e74bb8;
+}
+
+/* Styling for all grid items with glassmorphism */
+.grid-item {
+    z-index: 1;
+    backdrop-filter: var(--blur-10);
+    -webkit-backdrop-filter: var(--blur-10);
+    background-color: var(--grid-item-glass-bg);
+    border-radius: var(--border-radius-20);
+    border: var(--glass-border);
+}
+
+/* Grid positioning */
+.profile-card { grid-column: 1/6; grid-row: 1/4; }
+.AI-box { grid-column: 1/6; grid-row: 6/16; }
+.system-details { grid-column: 1/6; grid-row: 4/6; }
+.geeta-shlok-box { grid-column: 6/12; grid-row: 1/3; }
+.todo-list { grid-column: 12/19; grid-row: 10/16; }
+.searchbar { grid-column: 12/19; grid-row: 1/2; }
+.searchBar-input { grid-column: 12/19; grid-row: 2/3; }
+.side-appbar { grid-column: 19/21; grid-row: 1/16; }
+.CLK { grid-column: 6/12; grid-row: 3/7; }
+.calendar-item { grid-column: 6/12; grid-row: 7/13; }
+.github { grid-column: 6/12; grid-row: 13/16; }
+.music { grid-column: 12/19; grid-row: 3/6; }
+.notebook { grid-column: 12/19; grid-row: 6/10; }
+
+/* Profile section styling */
+.profile-card {
+    display: grid;
+    grid-template-areas: "pic info" "options options";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.profile-pic {
+    grid-area: pic;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+}
+
+.profile-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.useroptions {
+    grid-area: options;
+    display: flex;
+    justify-content: space-around;
+}
+
+.profile-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.profile-option i {
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.profile-option:hover i {
+    color: violet;
+}
+
+.user-name {
+    font-size: 20px;
+}
+
+.sample_user_id {
+    font-size: 17px;
+}
+
+/* Geeta Sholka section styling */
+.geeta-shlok-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Searchbar section styling */
+.searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+    color: black;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.searchbar i {
+    font-size: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.searchbar i:hover {
+    color: orangered;
+}
+
+.searchBar-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.input-bar {
+    flex: 1;
+    height: 44px;
+    padding: 0 20px 0 50px;
+    border: 1px solid #dfe1e5;
+    border-radius: 20px;
+    box-shadow: none;
+    font-size: 16px;
+    color: var(--text-color);
+    background: transparent;
+    margin: 0;
+    border-color: transparent;
+}
+
+.input-bar:focus {
+    border-color: orangered;
+    outline: none;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+.input-bar::placeholder {
+    color: var(--text-color);
+}
+
+.searchBar-input i {
+    position: absolute;
+    left: 15px;
+    color: var(--text-color);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Calendar item styles */
+.calendar-header {
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.calendar-nav i {
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.calendar-info {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.calendar-info h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Calendar body styles */
+.calendar-body {
+    padding: 10px;
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+}
+
+.weekday {
+    width: 45px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.sunday {
+    color: orangered;
+}
+
+.days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.days .day {
+    width: calc(100% / 7);
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 3px;
+}
+
+.days .day:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.days .day.inactive {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+
+.days .day.active {
+    background-color: rgba(255, 69, 0, 0.7);
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.days .day.current-day {
+    background-color: rgba(255, 69, 0, 0.7);
+    color: var(--text-color);
+    border-radius: 10px;
+}
+
+/* Notebook shortcut section styling */
+.notebook {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+}
+
+.shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.shortcut p {
+    font-size: 17px;
+}
+
+.shortcut p:hover {
+    color: orangered;
+    .fa-book-open {
+        color: orangered;
+    }
+}
+
+.shortcut-name {
+    margin: 0;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+}
+
+.fa-book-open {
+    font-size: 20px;
+    margin: 10px;
+}
+
+/* Sidebar styling */
+.grid-item.side-appbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(15, auto);
+    gap: 10px;
+    padding: 10px;
+    width: 150px;
+}
+
+.app-shortcut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.app-shortcut a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    
+    padding: 10px 0;
+    margin: 10px;
+    
+}
+
+.app-shortcut i {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.app-shortcut .img-logo {
+    width: 37px;
+}
