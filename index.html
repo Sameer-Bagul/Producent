@@ -24,6 +24,8 @@
 
         <div class="slide slide-1">
             <div id="wrapper" class="w1">
+
+                <!-- slide 1 widjets start -->
                 
                 <div class="grid-item profile-card">
                     <img src="./img/square.jpg" alt="profile-pic" class="profile-pic">
@@ -56,16 +58,21 @@
                     </div>    
                 </div>
 
-                <div class="grid-item system-details">
 
+                <div class="chat-container grid-item AI-box">
+                    <ul class="chat" id="chat-box">
+                        <!-- Messages will be appended here -->
+                    </ul>
+                    <div class="message-box">
+                        <input type="text" class="text_input" id="user-input" placeholder="Ask to ChatGPT...">
+                        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
                 </div>
-
-                <div class="grid-item AI-box">
-                    
-                </div>
+                
+                
 
                 <div class="grid-item todo-list">
-                    
+                    todo list
                 </div>
 
                 <div class="grid-item searchbar">
@@ -83,111 +90,38 @@
                 </div>
 
                 <div class="grid-item side-appbar">
-            <div class="app-shortcut">
-                <a href="https://www.google.com" target="_blank">
-                    <img src="./img/google.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="./img/facebook.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.twitter.com" target="_blank">
-                    <img src="./img/tw.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="./img/instagram.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.linkedin.com" target="_blank">
-                    <img src="./img/linkedin (1).png" alt="" class="img-logo">
-                </a>
-            </div>
-            
-            <div class="app-shortcut">
-                <a href="https://www.youtube.com" target="_blank">
-                    <img src="./img/youtube.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.fiverr.com" target="_blank">
-                    <img src="./img/fiverr.png" alt="" class="img-logo"> 
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.github.com" target="_blank">
-                    <img src="./img/github.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.spotify.com" target="_blank">
-                    <img src="./img/spotify.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.amazon.com" target="_blank">
-                    <img src="./img/amazon.png " alt="" class="img-logo">
-                </a>
-            </div>
-           
-          
-            
-            <div class="app-shortcut">
-                <a href="https://www.pinterest.com" target="_blank">
-                    <img src="./img/pinterest.png" alt="" class="img-logo">
-                </a>
-            </div>
-            
-            
-            
-            <div class="app-shortcut">
-                <a href="https://www.whatsapp.com" target="_blank">
-                    <img src="./img/whatsapp.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.telegram.org" target="_blank">
-                    <img src="./img/telegram.png" alt="" class="img-logo">
-                </a>
-            </div>
-            <div class="app-shortcut">
-                <a href="https://www.snapchat.com" target="_blank">
-                    <img src="./img/snap.png" alt="" class="img-logo">
-                </a>
-            </div>        
-            <div class="app-shortcut">
-                <a href="https://www.medium.com" target="_blank">
-                    <img src="./img/medium.png" alt="" class="img-logo">
-                </a>
-            </div>
-            
-            <div class="app-shortcut">
-                <a href="https://www.dribbble.com" target="_blank">
-                    <img src="./img/dribbble.png" alt="" class="img-logo">
-                </a>
-            </div>
-        </div>
+                    <div class="app-shortcut"><a href="https://www.google.com" target="_blank"><img src="./img/google.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.facebook.com" target="_blank"><img src="./img/facebook.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.twitter.com" target="_blank"><img src="./img/tw.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.instagram.com" target="_blank"><img src="./img/instagram.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.linkedin.com" target="_blank"><img src="./img/linkedin (1).png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.youtube.com" target="_blank"><img src="./img/youtube.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.fiverr.com" target="_blank"><img src="./img/fiverr.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.github.com" target="_blank"><img src="./img/github.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.spotify.com" target="_blank"><img src="./img/spotify.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.amazon.com" target="_blank"><img src="./img/amazon.png " alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.pinterest.com" target="_blank"><img src="./img/pinterest.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.whatsapp.com" target="_blank"><img src="./img/whatsapp.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.telegram.org" target="_blank"><img src="./img/telegram.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.snapchat.com" target="_blank"><img src="./img/snap.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.medium.com" target="_blank"><img src="./img/medium.png" alt="" class="img-logo"></a></div>
+                    <div class="app-shortcut"><a href="https://www.dribbble.com" target="_blank"><img src="./img/dribbble.png" alt="" class="img-logo"></a></div>
+                </div>
 
                 <div class="grid-item CLK">
+                    Clock
                     
                 </div>
 
                 <div class="grid-item calendar-item">
-
                     <div class="calendar-header">
                         <div class="calendar-nav">
                             <i class="fa-solid fa-chevron-left" onclick="prevMonth()"></i>
                             <h3 id="current-month"></h3>
-                            <h3 id="current-year"></h4>
+                            <h3 id="current-year"></h3>
                             <i class="fa-solid fa-chevron-right" onclick="nextMonth()"></i>
                         </div>
                     </div>
-
                     <hr>
                     <div class="calendar-body">
                         <div class="weekdays">
@@ -199,101 +133,52 @@
                             <div class="weekday">Fri</div>
                             <div class="weekday">Sat</div>
                         </div>
-                        <div class="days" id="calendar-days">
+                        <div class="days" id="calendar-days"></div>
+                    </div>
+                    <hr>
 
-                        </div>
+                    <div class="day-details" id="day-details"></div>
+                </div>
+                
+                
+                <div class="grid-item github">
+                    <div class="github-info-item">
+                        <span>Followers:</span>
+                        <span id="followers-count"></span>
+                    </div>
+                    <div class="github-info-item">
+                        <span>Following:</span>
+                        <span id="following-count"></span>
+                    </div>
+                    <div class="github-info-item">
+                        <span>Public Repos:</span>
+                        <span id="repos-count"></span>
+                    </div>
+                    <div class="github-info-item">
+                        <span>Public Gists:</span>
+                        <span id="gists-count"></span>
                     </div>
                 </div>
 
-                <div class="grid-item github">
-                    
-                </div>
-
                 <div class="grid-item music">
-                    
+                    music
                 </div>
 
-                <div class="grid-item notebook">
-                    
-                        <div class="shortcut" ">
-                            <a href="notebook1.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 1</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook2.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 2</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook3.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 3</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook4.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 4</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook5.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 5</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook6.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 6</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook7.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 7</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook8.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 8</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook9.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook10.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p>
-                            </a>
-                        </div>
+                <!-- <div class="grid-item notebook">
+                        <div class="shortcut" "><a href="notebook1.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 1</p></a></div>
+                        <div class="shortcut" "><a href="notebook2.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 2</p></a></div>
+                        <div class="shortcut" "><a href="notebook3.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 3</p></a></div>
+                        <div class="shortcut" "><a href="notebook4.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 4</p></a></div>
+                        <div class="shortcut" "><a href="notebook5.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 5</p></a></div>
+                        <div class="shortcut" "><a href="notebook6.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 6</p></a></div>
+                        <div class="shortcut" "><a href="notebook7.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 7</p></a></div>
+                        <div class="shortcut" "><a href="notebook8.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 8</p></a></div>
+                        <div class="shortcut" "><a href="notebook9.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p></a></div>
+                        <div class="shortcut" "><a href="notebook10.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p></a></div>
+                        <div class="shortcut" "><a href="notebook9.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p></a></div>
+                        <div class="shortcut" "><a href="notebook10.html"><p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p></a></div>   
+                </div> -->
 
-                        <div class="shortcut" ">
-                            <a href="notebook9.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 9</p>
-                            </a>
-                        </div>
-                
-                        <div class="shortcut" ">
-                            <a href="notebook10.html">
-                                <p class="shortcut-name"><i class="fas fa-book-open"></i>Notebook 10</p>
-                            </a>
-                        </div>
-
-                        
-                    
-                </div>
-                
-                
-                
-                
                 <div class="grid-item geeta-shlok-box">
                     
                         <h3 class="sholka">
@@ -304,11 +189,42 @@
                 </div>
             </div>
         </div>
+
+        <!-- this slide has the Link saver widget and more additional widget-->
+        <div class="slide slide-2">
+            <div id="wrapper" class="w2">
+                <h1>this slide has the Link saver widget and more additional widget</h1>
+            </div>
+        </div>
+
+
+        <!-- This slide will have the whole sticky notes App-->
+        <div class="slide slide-2" id="sticky-notes-slide">
+            <div id="wrapper" class="w2">
+                <h1>This slide will have the whole sticky notes App</h1>
+            </div>
+        </div>
+
+        <!-- This slide will have the Diary / notes taking  -->
+        <div class="slide slide-2" id="notebook-slide">
+            <div id="wrapper" class="w2">
+                <h1>This slide will have the Diary / notes taking</h1>
+            </div>
+        </div>
+
+
+        <!-- some more slides for future
         <div class="slide slide-2">
             <div id="wrapper" class="w2">
                 
             </div>
         </div>
+
+        <div class="slide slide-2">
+            <div id="wrapper" class="w2">
+                
+            </div>
+        </div> -->
         
         <div class="arrow r" onclick="next()">
             <i class="fa-solid fa-chevron-right"></i>

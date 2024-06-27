@@ -29,8 +29,6 @@ function search() {
     window.open(`https://${engine}/search?q=${query}`, '_blank');
 }
 
-
-// calendar functioning 
 document.addEventListener('DOMContentLoaded', function() {
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let currentDate = new Date();
@@ -43,6 +41,40 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const getDaysInMonth = (month, year) => new Date(year, month + 1, 0).getDate();
+
+    const fetchDayDetails = async (month, day) => {
+        const response = await fetch(`https://history.muffinlabs.com/date/${month + 1}/${day}`);
+        const data = await response.json();
+        return data;
+    };
+
+    const showDayDetails = async (month, day) => {
+        const dayDetailsContainer = document.getElementById('day-details');
+        dayDetailsContainer.innerHTML = 'Loading...';
+        
+        try {
+            const details = await fetchDayDetails(month, day);
+    
+            // Sort events, births, and deaths by year in descending order
+            const sortByYearDesc = (a, b) => b.year - a.year;
+            details.data.Events.sort(sortByYearDesc);
+            details.data.Births.sort(sortByYearDesc);
+            details.data.Deaths.sort(sortByYearDesc);
+    
+            dayDetailsContainer.innerHTML = `
+                <h4>Events on ${monthNames[month]} ${day}</h4>
+                <h5>Events:</h5>
+                <ul>${details.data.Events.map(event => `<li>${event.year}: ${event.text}</li>`).join('')}</ul>
+                <h5>Births:</h5>
+                <ul>${details.data.Births.map(birth => `<li>${birth.year}: ${birth.text}</li>`).join('')}</ul>
+                <h5>Deaths:</h5>
+                <ul>${details.data.Deaths.map(death => `<li>${death.year}: ${death.text}</li>`).join('')}</ul>
+            `;
+        } catch (error) {
+            dayDetailsContainer.innerHTML = 'Failed to load details. Please try again later.';
+        }
+    };
+    
 
     const populateDays = () => {
         const daysContainer = document.getElementById('calendar-days');
@@ -69,7 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Highlight the current day
             if (day === currentDate.getDate() && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {
                 dayElement.classList.add('current-day');
+                showDayDetails(currentMonth, day); // Show details for the current day by default
             }
+
+            dayElement.addEventListener('click', () => showDayDetails(currentMonth, day));
 
             daysContainer.appendChild(dayElement);
         }
@@ -111,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateCalendar(); // Initial call to display the current month and year
 });
+
 
 // JavaScript code
 var url = 'google.com';
@@ -220,3 +256,82 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+// For github
+
+// document.addEventListener('DOMContentLoaded', async function() {
+//     const githubUsername = 'Sameer-Bagul'; 
+//     const githubUrl = `https://api.github.com/users/${githubUsername}/repos`;
+
+//     try {
+//         const response = await fetch(githubUrl);
+//         const repos = await response.json();
+
+//         const githubInfoContainer = document.getElementById('github-info');
+//         githubInfoContainer.innerHTML = '';
+
+//         repos.forEach(repo => {
+//             const repoElement = document.createElement('div');
+//             repoElement.classList.add('repo');
+//             repoElement.innerHTML = `
+//                 <h3>${repo.name}</h3>
+//                 <p>${repo.description || 'No description available'}</p>
+//                 <p>Language: ${repo.language || 'Unknown'}</p>
+//                 <a href="${repo.html_url}" target="_blank">Visit Repository</a>
+//             `;
+//             githubInfoContainer.appendChild(repoElement);
+//         });
+//     } catch (error) {
+//         console.error('Failed to fetch GitHub repositories:', error);
+//         const githubInfoContainer = document.getElementById('github-info');
+//         githubInfoContainer.innerHTML = 'Failed to fetch GitHub repositories.';
+//     }
+// });
+
+document.getElementById('send-btn').addEventListener('click', sendMessage);
+
+document.getElementById('user-input').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        sendMessage();
+    }
+});
+
+function sendMessage() {
+    const userInput = document.getElementById('user-input');
+    const message = userInput.value.trim();
+
+    if (message) {
+        appendMessage('right', message);
+        userInput.value = '';
+
+        // Replace with your ChatGPT API call
+        fetchChatGPTResponse(message).then(response => {
+            appendMessage('left', response);
+        });
+    }
+}
+
+function appendMessage(side, text) {
+    const chatBox = document.getElementById('chat-box');
+    const messageElement = document.createElement('li');
+    messageElement.className = `message ${side}`;
+    messageElement.innerHTML = `<p>${text}</p>`;
+    chatBox.appendChild(messageElement);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+async function fetchChatGPTResponse(message) {
+    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer YOUR_API_KEY'
+        },
+        body: JSON.stringify({
+            prompt: message,
+            max_tokens: 150
+        })
+    });
+    const data = await response.json();
+    return data.choices[0].text.trim();
+}
