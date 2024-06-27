@@ -72,7 +72,23 @@
                 
 
                 <div class="grid-item todo-list">
-                    todo list
+                    <div class="wrapper-todo">
+                        <div class="task-input">
+                            <img src="./assets/bars-icon.svg" alt="icon">
+                            <input type="text" id="todoInput" placeholder="Add a new task">
+                        </div>
+                        
+                        <div class="controls">
+                            <div class="filters">
+                                <span class="active" id="all">All</span>
+                                <span id="pending">Pending</span>
+                                <span id="completed">Completed</span>
+                            </div>
+                            <button class="clear-btn" id="clearAll">Clear All</button>
+                        </div>
+                        
+                        <ul class="task-box" id="todoList"></ul>
+                    </div>
                 </div>
 
                 <div class="grid-item searchbar">
@@ -141,7 +157,7 @@
                 </div>
                 
                 
-                <div class="grid-item github">
+                <!-- <div class="grid-item github">
                     <div class="github-info-item">
                         <span>Followers:</span>
                         <span id="followers-count"></span>
@@ -158,7 +174,7 @@
                         <span>Public Gists:</span>
                         <span id="gists-count"></span>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="grid-item music">
                     music
