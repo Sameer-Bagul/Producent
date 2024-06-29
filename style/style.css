@@ -217,6 +217,7 @@ body {
 
 /* Geeta Sholka section styling */
 .geeta-shlok-box {
+    /* height: fit-content; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -663,6 +664,8 @@ h2 {
 }
 .filters .active {
     font-weight: bold;
+    color: var(--main-color);
+    background: transparent;
 }
 .clear-btn {
     background: var(--main-color);
@@ -676,6 +679,7 @@ h2 {
 .clear-btn:hover {
     background: #ffffff;
     color: var(--main-color);
+    
 }
 
 
@@ -712,5 +716,89 @@ h2 {
 .task-box li button:hover {
     background: #ffffff;
     color: var(--main-color);
+    .fa-trash{
+        color: var(--main-color);
+    }
+    
 }
 
+/* music -Spotify */
+
+.music{
+    height: 152px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    /* Adjust grid columns for smaller screens */
+    #wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Adjust specific grid items for smaller screens */
+    .profile-card {
+        grid-column: 1 / 3; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+
+    .AI-box {
+        grid-column: 1 / 3; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+
+    .geeta-shlok-box {
+        grid-column: 1 / 3; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+
+    .todo-list {
+        grid-column: 1 / 3; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+
+    /* Specific adjustments for .github and .music sections */
+    .github,
+    .music {
+        grid-column: 1 / 3; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Adjust grid columns for even smaller screens */
+    #wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust specific grid items for smaller screens */
+    .profile-card,
+    .AI-box,
+    .geeta-shlok-box,
+    .todo-list,
+    .github,
+    .music {
+        grid-column: 1 / 2; /* Example adjustment */
+        grid-row: auto; /* Adjust as needed */
+    }
+}

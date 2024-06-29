@@ -382,7 +382,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
+        // deleteButton.textContent = 'Delete';
+        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
         deleteButton.addEventListener('click', function (e) {
             e.stopPropagation();
             todos.splice(index, 1);
