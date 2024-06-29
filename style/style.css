@@ -112,13 +112,13 @@ body {
     background-position: center center;
 }
 
-.w1 {
-    /* background-image: url('../assets/5.jpg'); */
+/* .w1 {
+    background-image: url('../assets/5.jpg');
 }
 
 .w2 {
-    /* background-image: url('../assets/8.jpg'); */
-}
+    background-image: url('../assets/8.jpg');
+} */
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
