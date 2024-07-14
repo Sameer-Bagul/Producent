@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Producent</title>        
+    <link rel="icon" href="img/producent-logo.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./text-editor/text-editor.css">
+</head>
+<body id="main-body">
+
+    <!-- Main container for slider -->
+    <div class="container">
+
+        <div class="arrow l" onclick="prev()">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+
+        <div class="slide slide-1">
+            <!-- Content for slide 1 will be loaded dynamically -->
+        </div>
+
+        <div class="slide slide-2">
+            <!-- Content for slide 2 will be loaded dynamically -->
+        </div>
+
+        <div class="slide slide-3" id="sticky-notes-slide">
+            <!-- Content for slide 3 will be loaded dynamically -->
+        </div>
+
+        <div class="arrow r" onclick="next()">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+    </div>
+    <!-- Main container for slider End -->
+
+    <script>
+        function loadHTMLIntoDiv(url, divId) {
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(divId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            loadHTMLIntoDiv('web apps/slide1.html', 'slide1');
+            loadHTMLIntoDiv('web apps/slide2.html', 'slide2');
+            loadHTMLIntoDiv('web apps/slide3.html', 'slide3');
+        });
+
+        function prev() {
+            // Implement previous slide functionality
+        }
+
+        function next() {
+            // Implement next slide functionality
+        }
+    </script>
+
+    <script src="./scripts/script-link.js"></script>
+    <script src="./scripts/script.js"></script>
+</body>
+</html>

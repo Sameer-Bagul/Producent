@@ -10,6 +10,8 @@
     --grid-item-glass-bg: rgba(17, 25, 40, 0.25);
     --glass-border-color: rgba(255, 255, 255, 0.125);
     --glass-border: 1px solid var(--glass-border-color);
+
+    --sticky-notes-bg : rgba(2, 14, 37, 0.691) ;
 }
 
 /* Light theme overrides */
@@ -122,11 +124,10 @@ body {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 1px;
+    width: 3px;
 }
 
 ::-webkit-scrollbar-track {
-    /* background-color: var(--white); */
     background-color: transparent;
 }
 
@@ -221,6 +222,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    
+}
+.geeta-shlok-box h4{
+    
+    text-align: center;
+    
 }
 
 /* Searchbar section styling */
@@ -801,4 +809,82 @@ h2 {
         grid-column: 1 / 2; /* Example adjustment */
         grid-row: auto; /* Adjust as needed */
     }
+}
+
+
+/*! Slide 3 */
+/* Sticky notes Styling */
+
+.sticky-notes-container{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-image: 
+    repeating-linear-gradient(
+        to right,
+        transparent 0 50px, 
+        #fff1 50px 51px
+    ),
+    repeating-linear-gradient(
+        to bottom,
+        transparent 0 50px, 
+        #fff1 50px 51px
+    );
+    position: relative;
+    
+}
+.sticky-notes-add-controlles{
+    background-color: var(--background-color);
+    backdrop-filter: var(--blur-10);
+    width: max-content;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 24px;
+    display: flex;
+    gap: 10px;
+}
+.sticky-notes-add-controlles .color-input, #createBtn{
+    width: 40px;
+    height: 40px;
+    
+    border: none;
+    background-color: transparent;
+    font-size: large;
+    cursor: pointer;
+    border: 50%;
+}
+.sticky-notes-add-controlles .color-input::-webkit-color-swatch-wrapper{
+    padding: 4px;
+    border-radius: 50%;
+}
+.sticky-notes-add-controlles .color-input::-webkit-color-swatch{
+    border-radius: 50%;
+}
+#list textarea{
+    all: unset;
+    color: #d6d6d6;
+    resize: both;
+}
+#list .note{
+    background-color: var(--sticky-notes-bg);
+    backdrop-filter: var(--blur-10);
+    width: max-content;
+    
+    border-top: 30px solid #e6b905;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px #0004;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 50px;
+}
+#list .note span{
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    height: 30px;
+    font-family: cursive;
+    font-size: large;
+    padding-right: 10px;
+    cursor: pointer;
 }
