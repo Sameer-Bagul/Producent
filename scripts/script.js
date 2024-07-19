@@ -23,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
 });
 
+
+// functions for slide 1  
+
 function search() {
     const query = document.getElementById('searchbar-input').value;
     const engine = document.getElementById('shrLogo').querySelector('img').getAttribute('data-url');

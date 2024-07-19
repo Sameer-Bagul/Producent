@@ -108,18 +108,18 @@ body {
     z-index: 1;
 }
 #main-body {
-    background-image: url('../assets/5.jpg');
+    background-image: url('../Backgrounds/5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 /* .w1 {
-    background-image: url('../assets/5.jpg');
+    background-image: url('/5.jpg');
 }
 
 .w2 {
-    background-image: url('../assets/8.jpg');
+    background-image: url('/8.jpg');
 } */
 
 /* Custom Scrollbar */
@@ -510,6 +510,9 @@ body {
     width: 37px;
 }
 
+.app-shortcut .UDEMY {
+    height: 45px;
+}
 
 /* GitHub */
 .github {
@@ -887,4 +890,216 @@ h2 {
     font-size: large;
     padding-right: 10px;
     cursor: pointer;
+}
+
+
+
+/* ! styling for the Link saver slide  */
+
+.Link-saver-slide{
+    background-color: var(--background-color);
+    /* color: var(--text-color); */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    background-image: url(./assets/12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    /* backdrop-filter:; */
+    
+}
+
+/* Container styling */
+.link-app-container {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
+    background: #000000a1;
+}
+
+/* Header styling for the form */
+#linkForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px;
+    border: var(--glass-border);
+    background-color: transparent;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-20);
+    box-sizing: border-box;
+}
+
+#linkForm * {
+    height: 40px;
+    border-radius: var(--border-radius-20);
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+/* 
+#linkForm #linkForm#name {
+    grid-column: 1 / 2;
+}
+
+#linkForm #linkForm#link {
+    grid-column: 2 / 3;
+}
+
+#linkForm #linkForm#tag {
+    grid-column: 3 / 4;
+} */
+
+#linkForm button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    grid-column: 4 / 5;
+}
+
+#linkForm button:hover {
+    background-color: white;
+    color: var(--main-color);
+}
+
+/* Search #linkForm styling */
+#link-search {
+    padding: 10px;
+    border-radius: var(--border-radius-20);
+    border: var(--glass-border);
+    /* font-size: 1rem; */
+    /* margin-bottom: 20px; */
+    /* width: calc(100% - 40px); */
+    /* box-sizing: border-box; */
+}
+
+#linkForm {
+    background: var(--grid-item-glass-bg);
+    border: var(--glass-border-color);
+    
+    
+}
+#linkForm::placeholder{
+    color: var(--text-color);
+}
+
+
+#search:focus {
+    outline: none;
+    border-color: var(--main-color);
+    border: var(--glass-border-color);
+}
+
+/* List styling */
+#linkList {
+    text-align: left;
+    width: 100%;
+}
+
+#linkList h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.linklist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.linklist li {
+    background: var(--grid-item-glass-bg);
+    padding: 10px;
+    border-radius: var(--border-radius-20);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+    border: var(--glass-border);
+}
+
+.linklist li .preview{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linklist li span {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+}
+
+.linklist li span .name {
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.linklist li span .tag {
+    font-size: 0.875rem;
+    color: #777;
+}
+
+.linklist li .delete-button {
+    /* todo */
+}
+
+.linklist li .delete-button:hover {
+    /* todo */
+}
+
+/* Image styling */
+.linklist li img {
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: 10px;
+    border-radius: var(--border-radius-20);
+}
+
+
+/* General Styling */
+@media screen and (max-width: 768px) {
+    .link-app-container {
+        padding: 10px;
+    }
+
+    #linkForm {
+        grid-template-columns: 1fr;
+    }
+
+    .linklist {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Adjustments for smaller screens */
+    #linkForm * {
+        font-size: 0.9rem;
+    }
+    
+    .linklist li {
+        padding: 15px;
+    }
+
+    .linklist li img {
+        max-width: 30px;
+        max-height: 30px;
+    }
 }
