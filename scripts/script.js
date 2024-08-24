@@ -24,15 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-//! functions for slide 1  
 
-// search bar 
-function search() {
-    const query = document.getElementById('searchbar-input').value;
-    const engine = document.getElementById('shrLogo').querySelector('img').getAttribute('data-url');
-    window.open(`https://${engine}/search?q=${query}`, '_blank');
-}
-// JavaScript code
+//! functions for slide 1  
+// Variables
 var url = 'google.com';
 
 // Function to remove active class from all options
@@ -43,8 +37,22 @@ function removeActiveClass() {
     });
 }
 
+// Function for downloading a file// Function for downloading a file
+function downloadFile() {
+    var downloadUrl = prompt("Please enter the URL of the file to download:");
+    if (downloadUrl) {
+        var a = document.createElement('a');
+        a.href = downloadUrl;
+        a.target = '_blank';
+        a.download = ''; // You can specify a default filename here if needed
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+}
 
-// TODO : this is for downloading the item from internet from the above search bar 
+
+// Event listeners for search options
 document.querySelectorAll('.searchbar .search-option').forEach(val => {
     val.addEventListener('click', () => {
         if (val.classList.contains('download')) {
@@ -58,31 +66,26 @@ document.querySelectorAll('.searchbar .search-option').forEach(val => {
     });
 });
 
+// Function to perform a search
 function search() {
     var query = document.querySelector('#searchbar-input').value;
     var searchUrl = "https://" + url + "/search?q=" + encodeURIComponent(query);
     window.open(searchUrl, '_blank');
 }
 
-function downloadFile() {
-    // Logic for downloading a file
-    var a = document.createElement('a');
-    a.href = 'path/to/your/file';
-    a.download = 'filename.extension';
-    a.click();
-}
-
-// Add event listener for the Enter key
+// Event listener for Enter key in search bar
 document.querySelector('#searchbar-input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         search();
     }
 });
 
-// Add click event listener to the search icon
+// Event listener for search icon click
 document.querySelector('#search-icon').addEventListener('click', function() {
     search();
 });
+
+// Theme toggle and background change functionality
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme');
@@ -95,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     themeToggleButton.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
-
         let theme = 'dark';
         if (document.body.classList.contains('light-theme')) {
             theme = 'light';

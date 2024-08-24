@@ -234,10 +234,13 @@ body {
     color: var(--text-color);
     cursor: pointer;
     transition: color 0.3s;
+    background-color: transparent;
+    
 }
 
 .searchbar i:hover {
     color: orangered;
+    background-color: transparent;
 }
 
 .searchBar-input {
